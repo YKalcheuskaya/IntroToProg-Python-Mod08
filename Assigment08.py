@@ -27,7 +27,7 @@ class Product:
 
     # -- Constructor --
 
-    def __init__(self, product_name, product_price):
+    def __init__(self, product_name: str, product_price: float):
         # -- Attributes --
         self.product_name = product_name
         self.product_price = product_price
@@ -41,7 +41,7 @@ class Product:
 
     # Setter for 'product_name'
     @product_name.setter
-    def product_name(self, value):
+    def product_name(self, value: str):
         if not str(value).isnumeric():
             self.__product_name = value
         else:
@@ -54,7 +54,7 @@ class Product:
 
     # Setter for 'product_price'
     @product_price.setter
-    def product_price(self, value):
+    def product_price(self, value: float):
         try:
             if float(value) > 0:
                 self.__product_price = value
@@ -80,7 +80,7 @@ class FileProcessor:
     """
 
     @staticmethod
-    def save_data_to_file(file_name, products):
+    def save_data_to_file(file_name: str, products: list):
         """ Save list of products to a text file.
 
         :param file_name: (string) with name of file:
@@ -115,7 +115,7 @@ class FileProcessor:
         print("Failed to save products to the file!")
 
     @staticmethod
-    def read_data_from_file(file_name):
+    def read_data_from_file(file_name: str):
         """ Load products from a text file.
 
         :param file_name: (string) with name of file:
@@ -198,7 +198,7 @@ class IO:
         return menu_choice
 
     @staticmethod
-    def display_products(products):
+    def display_products(products: list):
         """  Displays the list of products to the user
 
         :param products: (list) with products to display:
